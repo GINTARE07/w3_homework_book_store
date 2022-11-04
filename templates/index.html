@@ -13,10 +13,13 @@
         {% for book in book_list%}
 
         <div class="Book">
-            <h2>{{ book.title }}</h2>
+
+            <h2><a href="http://127.0.0.1:5001/book/index" {{ book.title }}</h2>
             <h3>{{ book.author }}</h3>
             <h4>{{ book.genre}}</h4>
         </div>
         {% endfor %}
+
+    
 </body>
 </html>

@@ -6,3 +6,5 @@ book3 = Book("Naruto vol.1", "M. Kishimoto", "Adventure/ Fantasy/ Comedy/ Martia
 
 book_list = [book1, book2, book3]
 
+def chosen_book(book):
+    book = book1
