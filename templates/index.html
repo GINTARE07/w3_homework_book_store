@@ -9,17 +9,26 @@
 <body>
    
     <h1>Book picks of the week</h1>
+    <form action="/book" method="post">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title">
+      <label for="author">Author</label>
+      <input type="text" name="author" id="author">
+      <label for="genre">Genre</label>
+      <input type="text" name="genre" id="genre">
+      <button type="button" name ="submit">Submit</button>
+    </form>
     <div class="book-container">
         {% for book in book_list%}
-
-        <div class="Book">
-
-            <h2><a href="http://127.0.0.1:5001/book/index" {{ book.title }}</h2>
+        <div class="Book">       
+            <a href="{{ url_for("book", index=book_list.index(book))}}">{{book.title}}</a>
             <h3>{{ book.author }}</h3>
             <h4>{{ book.genre}}</h4>
+                <form class="form-inline" action="/book/delete/{{ book.title }}" method="POST">
+                <input type="submit" value="Delete">
+                </form>
         </div>
         {% endfor %}
-
-    
+    </div>
 </body>
 </html>
